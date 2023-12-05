@@ -1,14 +1,39 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
+import {HttpClientModule} from "@angular/common/http";
+import {RouterOutlet} from "@angular/router";
+import { ChoiceComponent } from './component/choice/choice.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AdminComponent } from './component/admin/admin.component';
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CommonModule} from "@angular/common";
+import { MenuComponent } from './component/menu/menu.component';
+import {KontaktComponent} from "./component/kontakt/kontakt.component";
+import { OnasComponent } from './component/onas/onas.component';
+import { ZamowComponent } from './component/order/zamow.component';
+import {MenuComponentService} from "./services/MenuComponent.service";
+import {OrderService} from "./services/order.service";
+import {shareDataService} from "./services/shareData.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChoiceComponent,
+    AdminComponent,
+    MenuComponent,
+    KontaktComponent,
+    OnasComponent,
+    ZamowComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterOutlet,
+    AppRoutingModule,
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
