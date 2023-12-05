@@ -1,0 +1,25 @@
+<div class="container">
+
+  <h1>User Registration</h1>
+
+  <form [formGroup]="elementFormGroup" (ngSubmit)="onFormSubmit()">
+
+    <pre></pre>
+    <div class="form-group" >
+      <label for="name">name</label><br>
+      <input type="text" name="name" formControlName="name" class = "form-control"    ngModel>
+    </div>
+    <pre></pre>
+    <div class="form-group">
+      <label for="quantity">Quantity</label><br>
+      <input type="text" name="quantity" formControlName="quantity" class = "form-control" ngModel>
+    </div>
+    <pre></pre>
+    <div class="form-group">
+      <label for="calories">Calories</label><br>
+      <input type="text" name="calories" formControlName="calories" class = "form-control" ngModel>
+    </div>
+    <pre></pre>
+    <button class="btn btn-primary" type="submit" >Submit</button>
+  </form>
+</div>
