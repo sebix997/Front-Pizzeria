@@ -14,7 +14,7 @@ export class ZamowComponent implements OnInit{
     public ZamowFormGroup: FormGroup = new FormGroup({
         id: new FormControl("id"),
         name: new FormControl("Name"),
-        lastname: new FormControl("LastName"),
+        lastname: new FormControl("lastname"),
         address: new FormControl("Address")
     });
     public IdPizzas: number[] = [];

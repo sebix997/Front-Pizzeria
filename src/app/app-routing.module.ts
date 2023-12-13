@@ -6,6 +6,7 @@ import { MenuComponent } from './component/menu/menu.component';
 import {KontaktComponent} from "./component/kontakt/kontakt.component";
 import {OnasComponent} from "./component/onas/onas.component";
 import {ZamowComponent} from "./component/order/zamow.component";
+import {LoginComponent} from "./component/login/login.component";
 
 const routes: Routes = [
   { path: 'choice', component: ChoiceComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'kontakt', component: KontaktComponent },
   { path: 'onas', component: OnasComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'order', component: ZamowComponent }
+  { path: 'order', component: ZamowComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
