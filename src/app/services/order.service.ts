@@ -19,4 +19,9 @@ export class OrderService {
   postOrder(formData: OrderComponentModel): Observable<any>  {
     return this.httpClient.post<OrderComponentModel[]>(this.endpoint, formData);
   }
+
+  updateOrder(id: number, updatedData: OrderComponentModel): Observable<OrderComponentModel> {
+    const updateUrl = `${this.endpoint}/${id}`;
+    return this.httpClient.put<OrderComponentModel>(updateUrl, updatedData);
+  }
 }

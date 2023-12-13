@@ -12,9 +12,7 @@ import { MenuComponent } from './component/menu/menu.component';
 import {KontaktComponent} from "./component/kontakt/kontakt.component";
 import { OnasComponent } from './component/onas/onas.component';
 import { ZamowComponent } from './component/order/zamow.component';
-import {MenuComponentService} from "./services/MenuComponent.service";
-import {OrderService} from "./services/order.service";
-import {shareDataService} from "./services/shareData.service";
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +23,7 @@ import {shareDataService} from "./services/shareData.service";
     KontaktComponent,
     OnasComponent,
     ZamowComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
