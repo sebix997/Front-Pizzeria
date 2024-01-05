@@ -1,0 +1,114 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    background-color: #ff5733;
+    padding: 10px 30px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-item {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Adjusted height to account for header/footer */
+    background: url('https://go-camp.pl/img/1000_8c349b41-f077-4495-b062-b4b54224b356.png') no-repeat center center;
+    background-size: cover;
+}
+
+.pizzeria-description {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    padding-bottom: 20px;
+    margin: 0 25%; /* Creates equal space on both sides */
+    width: 60%; /* Adjusts the width of the description box */
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: fixed;
+    top: 80px;
+}
+/* Dodaj te style CSS do pliku order.component.css */
+
+.order-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.pizza-name {
+    flex: 1;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.price, .quantity {
+    margin: 0 10px;
+}
+
+.menu-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.menu-button:hover {
+    background-color: #ff4500;
+}
+
+.decrease-button{
+    width: 20px;
+    height: 20px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px; /* Odpowiednia odległość między przyciskami */
+}
+.increase-button {
+    width: 20px;
+    height: 20px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

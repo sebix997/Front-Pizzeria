@@ -1,7 +1,0 @@
-
-<a class="nav-link" href="/order">PRZEJDZ Z KOSZYKIEM DALEJ</a>
-<div *ngFor="let item of MenuComponent">
-  <img src="{{ item.image }}" alt="Obraz" crossorigin="anonymous">
-  id: {{ item.id }} nazwa: {{ item.name }} składniki: {{ item.ingredients }}  description: {{ item.description }} cena: {{ item.cena }}
-  <button (click)="addToCart(item.id,item.name,item.cena)">Dodaj do Koszyka</button>
-</div>

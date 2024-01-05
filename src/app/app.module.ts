@@ -11,11 +11,11 @@ import {CommonModule} from "@angular/common";
 import { MenuComponent } from './component/menu/menu.component';
 import {KontaktComponent} from "./component/kontakt/kontakt.component";
 import { OnasComponent } from './component/onas/onas.component';
-import { ZamowComponent } from './component/order/zamow.component';
+import { OrderComponent } from './component/order/order.component';
 import { LoginComponent } from './component/login/login.component';
-import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { WlasneComponent } from './component/wlasne/wlasne.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { WlasneComponent } from './component/wlasne/wlasne.component';
     MenuComponent,
     KontaktComponent,
     OnasComponent,
-    ZamowComponent,
+    OrderComponent,
     LoginComponent,
     WlasneComponent,
 
@@ -38,10 +38,12 @@ import { WlasneComponent } from './component/wlasne/wlasne.component';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSnackBarModule,
+    MatDialogModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    MatDialogModule,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
