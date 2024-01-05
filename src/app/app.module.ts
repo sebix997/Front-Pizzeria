@@ -13,6 +13,7 @@ import {KontaktComponent} from "./component/kontakt/kontakt.component";
 import { OnasComponent } from './component/onas/onas.component';
 import { ZamowComponent } from './component/order/zamow.component';
 import { LoginComponent } from './component/login/login.component';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { LoginComponent } from './component/login/login.component';
     OnasComponent,
     ZamowComponent,
     LoginComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { LoginComponent } from './component/login/login.component';
     AppRoutingModule,
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
