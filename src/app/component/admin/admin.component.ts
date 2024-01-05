@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {OrderService} from "../../services/order.service";
 import {OrderComponentModel} from "../../models/OrderComponentModel";
+import {AuthenService} from "../../services/authen.service";
 
 @Component({
   selector: 'app-admin',
@@ -10,7 +11,8 @@ import {OrderComponentModel} from "../../models/OrderComponentModel";
 export class AdminComponent {
   OrderComponent: OrderComponentModel[]=[];
 
-  constructor(private dataService: OrderService) { }
+  constructor(private dataService: OrderService,
+              private AuthenService: AuthenService) { }
 
   ngOnInit() {
     this.ChoiceElement();
@@ -47,5 +49,10 @@ export class AdminComponent {
             }
         );
     }
+  Logout()
+  {
+   this.AuthenService.setAuthenticated(false);
+    window.location.href = '/login';
+  }
 
 }

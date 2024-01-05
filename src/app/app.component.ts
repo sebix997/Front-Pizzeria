@@ -1,17 +1,22 @@
-import {Component, OnInit} from '@angular/core';
-import {AppService} from "./services/app.service";
-import {WetherModel} from "./models/WetherModel";
+import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: '<router-outlet></router-outlet>',
 })
 export class AppComponent implements OnInit {
-  WetherData: WetherModel[]=[];
-  constructor(private dataService: AppService) { }
+  constructor(private snackBar: MatSnackBar) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.showSuccessSnackBar('Testowy snack bar');
+  }
+
+  private showSuccessSnackBar(message: string): void {
+    this.snackBar.open(message, 'Zamknij', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+    });
   }
 }
-

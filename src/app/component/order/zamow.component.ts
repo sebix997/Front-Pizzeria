@@ -2,6 +2,8 @@ import { Component,OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {shareDataService} from "../../services/shareData.service";
 import {OrderService} from "../../services/order.service";
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-order',
@@ -21,13 +23,12 @@ export class ZamowComponent implements OnInit{
     public NamePizzas: string[] = [];
     public CenaPizzas: number[] = [];
   constructor(private shareDataService: shareDataService,
-              private OrderService: OrderService) {
+              private OrderService: OrderService,
+              private router: Router,
+              private snackBar: MatSnackBar) {
 
   }
 
-  getProductData() {
-
-  }
 
   onFormSubmit() {
       this.ZamowFormGroup.value.id=0;
@@ -39,18 +40,35 @@ export class ZamowComponent implements OnInit{
           .subscribe(
               response => {
                   console.log(response);
+                //  this.router.navigate(['/menu']);
+                  setTimeout(() => {
+                      this.showSuccessSnackBar('Zamówienie zostało poprawnie złożone!');
+                  });
               }
           );
       this.shareDataService.clearData();
   }
 
+    private showSuccessSnackBar(message: string): void {
+        this.snackBar.open(message, 'Zamknij', {
+            duration: 3000,
+            horizontalPosition: 'center',
+            verticalPosition: 'bottom',
+        });
+    }
+
+
   obliczSume(): number {
         return this.CenaPizzas.reduce((acc, value) => acc + value, 0);
     }
     ngOnInit(): void {
+
+        this.showSuccessSnackBar('Testowy snack bar');
         this.IdPizzas=this.shareDataService.pobierzTabliceId();
         this.NamePizzas=this.shareDataService.pobierzTabliceName();
         this.CenaPizzas=this.shareDataService.pobierzTabliceCena();
+
+
 
     }
 
