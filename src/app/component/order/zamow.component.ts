@@ -30,30 +30,37 @@ export class ZamowComponent implements OnInit{
   }
 
 
-  onFormSubmit() {
-      this.ZamowFormGroup.value.id=0;
-      this.ZamowFormGroup.value.order=this.NamePizzas.join(', ');
-      this.ZamowFormGroup.value.prince=this.obliczSume();
-      this.ZamowFormGroup.value.status="New";
-      console.log(this.ZamowFormGroup.value);
-      this.OrderService.postOrder(this.ZamowFormGroup.value)
-          .subscribe(
-              response => {
-                  console.log(response);
-                //  this.router.navigate(['/menu']);
-                  setTimeout(() => {
-                      this.showSuccessSnackBar('Zamówienie zostało poprawnie złożone!');
-                  });
-              }
-          );
-      this.shareDataService.clearData();
-  }
+    onFormSubmit() {
+        this.ZamowFormGroup.value.id = 0;
+        this.ZamowFormGroup.value.order = this.NamePizzas.join(', ');
+        this.ZamowFormGroup.value.price = this.obliczSume(); // Poprawka: zmiana prince na price
+        this.ZamowFormGroup.value.status = "New";
+        console.log(this.ZamowFormGroup.value);
+        this.OrderService.postOrder(this.ZamowFormGroup.value)
+            .subscribe(
+                response => {
+                    console.log(response);
+                    this.shareDataService.clearData();
+                   // this.router.navigate(['/menu']);
+                    setTimeout(() => {
+                        this.showSuccessSnackBar('Zamówienie zostało poprawnie złożone!');
+                    });
+                }
+            );
+    }
+
+
 
     private showSuccessSnackBar(message: string): void {
-        this.snackBar.open(message, 'Zamknij', {
+        const snackBarRef = this.snackBar.open(message, 'Zamknij', {
             duration: 3000,
             horizontalPosition: 'center',
-            verticalPosition: 'bottom',
+            verticalPosition: 'top',
+        });
+
+        snackBarRef.afterDismissed().subscribe(() => {
+            // Po zamknięciu snackbar'a, przekieruj do menu
+            this.router.navigate(['/menu']);
         });
     }
 
@@ -63,12 +70,9 @@ export class ZamowComponent implements OnInit{
     }
     ngOnInit(): void {
 
-        this.showSuccessSnackBar('Testowy snack bar');
         this.IdPizzas=this.shareDataService.pobierzTabliceId();
         this.NamePizzas=this.shareDataService.pobierzTabliceName();
         this.CenaPizzas=this.shareDataService.pobierzTabliceCena();
-
-
 
     }
 
