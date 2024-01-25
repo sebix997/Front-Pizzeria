@@ -14,6 +14,7 @@ import { OnasComponent } from './component/onas/onas.component';
 import { ZamowComponent } from './component/order/zamow.component';
 import { LoginComponent } from './component/login/login.component';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
