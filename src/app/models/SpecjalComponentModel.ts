@@ -1,8 +1,7 @@
-export interface OrderComponentModel {
+export interface SpecjalOrderComponentModel {
   id:number;
-  order: string;
   prince: number;
-  name: string;
+  ingredients: string;
   lastname: string;
   address: string;
   status: string;

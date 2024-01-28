@@ -1,8 +1,13 @@
-<p>choice works!</p>
-drffawfawfawf
-fwafw
+<!-- Zwykłe zamówienia -->
 <div *ngFor="let item of OrderComponent">
-  id: {{ item.id}} zamówienie: {{item.order}} cena: {{item.prince}}  Imie: {{item.name}} Nazwisko: {{item.lastname}}  adres: {{item.address}}
-  <button (click)="handleButtonClick(item)">{{item.status}}</button>
+  id: {{ item.id }} zamówienie: {{ item.order }} cena: {{ item.prince }} Imie: {{ item.name }} Nazwisko: {{ item.lastname }} adres: {{ item.address }} data: {{ item.dataUtworzenia}}
+  <button (click)="handleButtonClick(item)">{{ item.status }}</button>
 </div>
+ZAMÓWIENIA SPECJALNE
+<!-- Specjalne zamówienia -->
+<div *ngFor="let specialItem of SpecjalOrderComponent">
+  id: {{ specialItem.id }} zamówienie: {{ specialItem.ingredients }} cena: {{ specialItem.prince }}  Nazwisko: {{ specialItem.lastname }} adres: {{ specialItem.address }} data: {{ specialItem.dataUtworzenia }}
+  <button (click)="handleSpecialOrderButtonClick(specialItem)">{{ specialItem.status }}</button>
+</div>
+
 <button (click)="Logout()">Wyloguj</button>
