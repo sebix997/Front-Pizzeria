@@ -32,7 +32,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 60px); /* Adjusted height to account for header/footer */
+    height: calc(100vh - 82px); /* Adjusted height to account for header/footer */
     background: url('https://go-camp.pl/img/1000_8c349b41-f077-4495-b062-b4b54224b356.png') no-repeat center center;
     background-size: cover;
 }
@@ -46,7 +46,7 @@ body, html {
     box-sizing: border-box;
     border-radius: 10px;
     position: fixed;
-    top: 80px;
+    top: 110px;
 }
 /* Dodaj te style CSS do pliku order.component.css */
 

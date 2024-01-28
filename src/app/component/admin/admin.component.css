@@ -1,0 +1,71 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    background-color: #ff5733;
+    padding: 10px 30px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-item {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+/* Stylizacja całej tabeli */
+table {
+    width: 80%; /* Szerokość tabeli */
+    margin: 0 auto; /* Wyśrodkowanie tabeli na stronie */
+    border-collapse: collapse; /* Złączanie obramowania komórek */
+}
+
+/* Stylizacja nagłówków */
+th {
+    background-color: #f2f2f2; /* Inny kolor tła dla nagłówków */
+}
+
+/* Stylizacja co drugiego wiersza */
+tr:nth-child(even) {
+    background-color: #e6e6e6; /* Inny kolor tła dla co drugiego wiersza */
+}
+
+/* Stylizacja komórek w tabeli */
+td, th {
+    border: 1px solid #ddd; /* Obramowanie komórek */
+    padding: 8px; /* Wewnętrzny odstęp komórek */
+    text-align: left; /* Wyrównanie tekstu do lewej strony */
+}
+
+/* Stylizacja przycisku */
+button {
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: darkred; /* Kolor przycisku po najechaniu kursorem */
+}
+

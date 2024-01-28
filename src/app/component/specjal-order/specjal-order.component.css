@@ -1,4 +1,3 @@
-/* styles.css */
 body, html {
     margin: 0;
     padding: 0;
@@ -49,70 +48,35 @@ body, html {
     position: fixed;
     top: 110px;
 }
-.order-details {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 20px;
-}
-
-.order-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    width: 100%;
-}
-
-.pizza-name {
-    flex: 1;
-}
-
-.quantity-controls {
-    display: flex;
-    align-items: center;
-}
-
-.price, .quantity {
-    margin: 0 10px;
-}
 
 .back-to-menu-button {
-  padding: 10px 20px;
-  background-color: #ff5733;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .writing{
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 20px;;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;;
 }
 
 .adres {
-  width: 500px;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 20px;;
+    width: 500px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;;
 }
+
 .place-order-button
 {
-  padding: 10px 20px;
-  background-color: #ff5733;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.edit-order-button{
-  padding: 10px 20px;
-  background-color: #ff5733;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 20px;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }

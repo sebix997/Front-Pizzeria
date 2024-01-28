@@ -9,6 +9,7 @@ import {OrderComponent} from "./component/order/order.component";
 import {LoginComponent} from "./component/login/login.component";
 import {WlasneComponent} from "./component/wlasne/wlasne.component";
 import {authGuardGuard} from "./auth-guard.guard";
+import {SpecjalOrderComponent} from "./component/specjal-order/specjal-order.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/onas', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent, canActivate:[authGuardGuard] },
   { path: 'order', component: OrderComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'wlasne', component: WlasneComponent }
+  { path: 'wlasne', component: WlasneComponent },
+  { path: 'specjal-order', component: SpecjalOrderComponent}
 ];
 
 @NgModule({

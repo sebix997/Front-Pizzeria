@@ -1,0 +1,39 @@
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(120vh - 60px); /* Adjusted height to account for header/footer */
+    background: url('https://go-camp.pl/img/1000_8c349b41-f077-4495-b062-b4b54224b356.png') no-repeat center center;
+    background-size: cover;
+    padding-bottom: 140px;
+}
+
+.pizzeria-description {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin: 0 auto; /* Wyśrodkowanie w poziomie */
+    width: 20%; /* Dostosuj szerokość opisu */
+    height: 40%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex; /* Włącz flexbox */
+    flex-direction: column; /* Ustaw flex-direction na kolumnę */
+    justify-content: center; /* Wyśrodkowanie wertykalne */
+    align-items: center; /* Wyśrodkowanie poziome */
+}
+
+.login {
+    padding: 10px 20px;
+    margin-top: 40px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error-message {
+    color: red; /* Ustaw kolor na czerwony */
+    font-size: 14px; /* Dostosuj rozmiar czcionki */
+    margin-top: 5px; /* Dodaj niewielki margines od góry */
+}

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuComponentService} from "../../services/MenuComponent.service";
 import {Router} from "@angular/router";
 
 
@@ -11,7 +10,7 @@ import {Router} from "@angular/router";
                 <div class="navbar-brand">{{ title }}</div>
                 <div class="navbar-end">
                     <a class="navbar-item" routerLink="/menu">Menu</a>
-                    <a class="navbar-item" routerLink="/order">Zamowienie</a>
+                    <a class="navbar-item" routerLink="/wlasne">Stwórz Własną Pizze</a>
                     <a class="navbar-item" routerLink="/onas">O nas</a>
                     <a class="navbar-item" routerLink="/kontakt">Kontakt</a>
                 </div>

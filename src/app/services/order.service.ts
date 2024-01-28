@@ -9,7 +9,7 @@ import {OrderComponentModel} from "../models/OrderComponentModel";
 export class OrderService {
 
   //baseApiUrl:string=environment.baseApiUrl;
-  endpoint:string='https://localhost:7194/api/'+'Order';
+  endpoint:string='https://localhost:7194/api/Order';
 
   constructor(private httpClient: HttpClient) { }
 

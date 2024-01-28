@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
                 <div class="navbar-brand">{{ title }}</div>
                 <div class="navbar-end">
                     <a class="navbar-item" routerLink="/menu">Menu</a>
-                    <a class="navbar-item" routerLink="/order">Zamowienie</a>
+                    <a class="navbar-item" routerLink="/wlasne">Stwórz Własną Pizze</a>
                     <a class="navbar-item" routerLink="/onas">O nas</a>
                     <a class="navbar-item" routerLink="/kontakt">Kontakt</a>
                 </div>

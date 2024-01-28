@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from "@angular/router";
 import { MatDialog } from '@angular/material/dialog';
 import { OrderConfirmationDialogComponent } from '../order-confirmation-dialog/order-confirmation-dialog.component';
+import { OrderComponentModel } from '../../models/OrderComponentModel';
+import { OrderService } from '../../services/order.service';
+
 
 @Component({
   selector: 'app-choice',
@@ -11,8 +14,8 @@ import { OrderConfirmationDialogComponent } from '../order-confirmation-dialog/o
         <div class="navbar-brand">{{ title }}</div>
         <div class="navbar-end">
           <a class="navbar-item" routerLink="/menu">Menu</a>
-          <a class="navbar-item" routerLink="/order">Zamowienie</a>
-          <a class="navbar-item" routerLink="/about-us">O nas</a>
+          <a class="navbar-item" routerLink="/wlasne">Stwórz Własną Pizze</a>
+          <a class="navbar-item" routerLink="/onas">O nas</a>
           <a class="navbar-item" routerLink="/kontakt">Kontakt</a>
         </div>
       </nav>
@@ -42,8 +45,6 @@ import { OrderConfirmationDialogComponent } from '../order-confirmation-dialog/o
             <input class="writing" type="text" id="lastName" [(ngModel)]="lastName" (change)="logVariables()">
             <p for="address">Adres (MIASTO, ULICA, NUMER DOMU/MIESZKANIA):</p>
             <input class="adres" type="text" id="address" [(ngModel)]="address" (change)="logVariables()">
-            <p for="phoneNumber">Nr telefonu:</p>
-            <input class="writing" type="text" id="phoneNumber" [(ngModel)]="phoneNumber" (change)="logVariables()">
           </div>
           <button (click)="goToMenu()" class="edit-order-button">Wróć do edycji zamówienia</button>
           <button *ngIf="isFormValid" (click)="placeOrder()" class="place-order-button">Złóż zamówienie</button>
@@ -57,12 +58,12 @@ import { OrderConfirmationDialogComponent } from '../order-confirmation-dialog/o
 export class ChoiceComponent {
   title = 'Pizzeria PoSameBrzegi';
   orderItems: { id: number, name: string, quantity: number, cena: number }[] = [];
-  constructor(private router: Router, private dialog: MatDialog) {}
+  constructor(private router: Router, private dialog: MatDialog, private orderService: OrderService) {}
   firstName: string = '';
   lastName: string = '';
   address: string = '';
-  phoneNumber: string = '';
   isFormValid: boolean = false; // Flaga określająca, czy formularz jest poprawnie wypełniony
+
 
   ngOnInit(): void {
     const storedOrderItems = sessionStorage.getItem('orderItems');
@@ -81,31 +82,49 @@ export class ChoiceComponent {
 
   placeOrder(): void {
     const dialogRef = this.dialog.open(OrderConfirmationDialogComponent, {
-      width: '400px', // Ustaw szerokość okna dialogowego według potrzeb
-      height: '120px', // Ustaw wysokość okna dialogowego według potrzeb
+      width: '400px',
+      height: '120px',
     });
-    // Po zamknięciu okna modalnego, przenieś użytkownika do zakładki menu
+
     dialogRef.afterClosed().subscribe(() => {
-      this.router.navigate(['/menu']);
-      // Usuń zmienne z pamięci sesji
-      sessionStorage.removeItem('orderItems');
+      const itemsWithQuantities: string[] = this.orderItems.map(item => `${item.name} (${item.quantity} szt.)`);
+      // Przygotuj dane zamówienia do wysłania
+      const orderData: OrderComponentModel = {
+        id: 0, // Możesz ustawić odpowiednie id lub pozostawić 0, jeśli baza danych generuje id automatycznie
+        order: JSON.stringify(itemsWithQuantities),
+        prince: this.calculateTotalAmount(),
+        name: this.firstName,
+        lastname: this.lastName,
+        address: this.address,
+        status: 'Nowe', // Status zamówienia
+        dataUtworzenia: new Date(), // Data utworzenia zamówienia
+      };
+
+      // Wyślij dane zamówienia do bazy danych
+      this.orderService.postOrder(orderData).subscribe(response => {
+        console.log('Zamówienie zostało dodane do bazy danych.', response);
+
+        // Przenieś użytkownika do zakładki menu
+        this.router.navigate(['/menu']);
+
+        // Usuń zmienne z pamięci sesji
+        sessionStorage.removeItem('orderItems');
+      }, error => {
+        console.error('Błąd podczas dodawania zamówienia do bazy danych', error);
+      });
     });
   }
+
 
   logVariables(): void {
     console.log('firstName:', this.firstName);
     console.log('lastName:', this.lastName);
     console.log('address:', this.address);
-    console.log('phoneNumber:', this.phoneNumber);
 
-    // Sprawdzanie, czy numer telefonu ma co najmniej 9 cyfr
-    if (this.phoneNumber.length >= 9) {
-      this.isFormValid = this.firstName !== '' && this.lastName !== '' && this.address !== '';
-    } else {
-      this.isFormValid = false;
-    }
+    this.isFormValid = this.firstName !== '' && this.lastName !== '' && this.address !== '';
 
     console.log('isFormValid:', this.isFormValid);
   }
+
 
 }
