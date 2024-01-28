@@ -15,6 +15,7 @@ import { ZamowComponent } from './component/order/zamow.component';
 import { LoginComponent } from './component/login/login.component';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { WlasneComponent } from './component/wlasne/wlasne.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     OnasComponent,
     ZamowComponent,
     LoginComponent,
+    WlasneComponent,
 
   ],
   imports: [

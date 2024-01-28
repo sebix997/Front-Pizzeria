@@ -7,6 +7,7 @@ import {KontaktComponent} from "./component/kontakt/kontakt.component";
 import {OnasComponent} from "./component/onas/onas.component";
 import {ZamowComponent} from "./component/order/zamow.component";
 import {LoginComponent} from "./component/login/login.component";
+import {WlasneComponent} from "./component/wlasne/wlasne.component";
 import {authGuardGuard} from "./auth-guard.guard";
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'onas', component: OnasComponent },
   { path: 'admin', component: AdminComponent, canActivate:[authGuardGuard] },
   { path: 'order', component: ZamowComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'wlasne', component: WlasneComponent }
 ];
 
 @NgModule({
