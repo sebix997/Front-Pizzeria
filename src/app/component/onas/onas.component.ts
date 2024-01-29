@@ -20,6 +20,7 @@ import { Component } from '@angular/core';
         <div class="pizzeria-description">
             <h1>{{ title }}</h1>
             <p>"{{ title }}" to kameralna pizzeria usytuowana w sercu małego miasteczka, specjalizująca się w przygotowywaniu autentycznej włoskiej pizzy w tradycyjnym kamiennym piecu. Menu obejmuje zarówno klasyczne smaki, jak i unikalne kompozycje, z użyciem świeżych składników. Przytulne wnętrze tworzy niesamowitą atmosferę, podkreśloną aromatem pieczenia w kamiennym piecu. Pizzeria oferuje dania na miejscu, na wynos i dostawę, z przyjazną obsługą służącą pomocą w wyborze potrawy. "{{ title }}" to nie tylko miejsce na pyszną pizzę, ale także centrum włoskiej kultury kulinarnej.</p>
+            <img class="foto" src="https://gastrowiedza.pl/sites/default/files/Ile%20kosztuje%20kamienny%20piec%20do%20pizzy.jpg">
         </div>
     </div>
     `,
